@@ -3,289 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jowin Shaju - Matrimony Portfolio</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind Configuration for Chavara-inspired colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            red: '#991B1B', // Deep red
-                            gold: '#D97706', // Rich gold
-                            light: '#FEF2F2', // Very light red background
-                            dark: '#450A0A'  // Very dark red for text
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
+    <title>Matrimony Portfolio - Jowin Shaju</title>
     <style>
+        :root {
+            --primary-red: #b30000;
+            --accent-gold: #ffc107;
+            --bg-light: #fff8f8;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+        }
+
         body {
-            background-color: #FEF2F2;
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
         }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-in-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
+
+        header {
+            background: linear-gradient(135deg, var(--primary-red), #800000);
+            color: var(--text-light);
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 5px solid var(--accent-gold);
         }
-        
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
         }
-        
-        /* Staggered animation delays */
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        
-        /* Gallery Image Styling */
-        .gallery-img-container {
-            overflow: hidden;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: #f3f4f6;
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: var(--accent-gold);
         }
-        
-        .gallery-img-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 20px;
         }
-        
-        .gallery-img {
-            width: 100%;
-            height: auto;
+
+        .section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary-red);
+        }
+
+        .section h2 {
+            color: var(--primary-red);
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .info-item {
+            background: var(--bg-light);
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .info-item strong {
             display: block;
-            object-fit: cover;
+            color: var(--primary-red);
+            font-size: 0.9rem;
         }
-        
-        .card-header-gradient {
-            background: linear-gradient(135deg, #991B1B 0%, #DC2626 100%);
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        /* Preserves natural aspect ratios and prevents distortion while remaining responsive */
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            object-fit: contain;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-red);
+            color: var(--text-light);
+            margin-top: 40px;
         }
     </style>
 </head>
-<body class="text-gray-800 font-sans min-h-screen flex flex-col">
+<body>
 
-    <header class="relative bg-gradient-to-r from-brand-red via-red-700 to-brand-red text-white overflow-hidden shadow-lg">
-        <!-- Decorative background elements -->
-        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#FCD34D 2px, transparent 2px); background-size: 30px 30px;"></div>
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-gold rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        
-        <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 relative z-10 flex flex-col items-center text-center">
-            <span class="text-brand-gold font-semibold tracking-widest uppercase text-sm mb-3">Matrimony Profile</span>
-            <h1 class="font-serif text-5xl md:text-6xl font-bold mb-4 drop-shadow-md">Jowin Shaju</h1>
-            <p class="text-xl text-red-100 font-light flex items-center gap-3">
-                <span>10-02-1996, 30 Yrs</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
-                <span>165 cm</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
-                <span>Kochi, Kerala</span>
-            </p>
-        </div>
-        
-        <!-- Bottom curve decorative SVG -->
-        <div class="absolute bottom-0 w-full overflow-hidden leading-none">
-            <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,123,192.5,109.28Z" fill="#FEF2F2"></path>
-            </svg>
-        </div>
+    <header>
+        <h1>Jowin Shaju</h1>
+        <p>Seeking a God-fearing, humble, and loving life partner</p>
     </header>
 
-    <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+    <div class="container">
         
-        <!-- About Section (Full Width) -->
-        <section class="bg-white rounded-2xl shadow-xl p-8 mb-10 border border-red-100 fade-in">
-            <h2 class="text-2xl font-serif text-brand-red font-bold mb-4 flex items-center">
-                <svg class="w-6 h-6 mr-2 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                About Me
-            </h2>
-            <p class="text-gray-700 leading-relaxed text-lg">
-                I am a God-fearing, simple, and family-oriented person hailing from Kochi. I possess a strong educational background with a B.Tech in Computer Science and a PG Diploma in Project Management from Canada. Professionally, I have experience in DevOps and currently work full-time as a Marketing Executive, while also pursuing a short-term part-time role as a Cloud & DevOps Trainee as I work towards re-entering the IT field. I am marriage-oriented, looking to settle down, and open to relocating abroad.
-            </p>
-        </section>
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Hello, I am a God-fearing, simple, and family-oriented person from Kochi. I hold a B.Tech in Computer Science and a PG Diploma in Project Management from Canada. I have experience in DevOps and currently work full-time as a Marketing Executive, while also pursuing a short-term part-time role as a Cloud & DevOps Trainee at AkumenbyQ, Kakkanad (Remote) as I work towards re-entering the IT field. I am marriage-oriented, looking to settle down, and open to relocating abroad. I had undergone hair fixing, which I am comfortable sharing openly.</p>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <!-- Religion & Background -->
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden fade-in delay-100 border border-red-100 flex flex-col">
-                <div class="card-header-gradient px-6 py-4">
-                    <h3 class="text-xl font-serif font-bold text-white">Religion & Background</h3>
-                </div>
-                <div class="p-6 flex-grow">
-                    <ul class="space-y-4">
-                        <li class="flex flex-col">
-                            <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">Religion / Denomination</span>
-                            <span class="text-lg font-semibold text-gray-800">Christian, Syrian Catholic</span>
-                        </li>
-                        <li class="flex flex-col">
-                            <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">Archdiocese</span>
-                            <span class="text-lg font-semibold text-gray-800">Ernakulam-Angamaly Archdiocese</span>
-                        </li>
-                        <li class="flex flex-col">
-                            <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">Parish</span>
-                            <span class="text-lg font-semibold text-gray-800">St. Francis Assisi Church, Kakkanad</span>
-                        </li>
-                    </ul>
-                </div>
+        <div class="section">
+            <h2>Primary Information</h2>
+            <div class="info-grid">
+                <div class="info-item"><strong>Age & Height:</strong> 30 Yrs 7 Months | 165 Cm</div>
+                <div class="info-item"><strong>Religion:</strong> Christian, Syrian Catholic</div>
+                <div class="info-item"><strong>Location:</strong> Kakkanad, Ernakulam, Kerala</div>
+                <div class="info-item"><strong>Marital Status:</strong> Unmarried</div>
+                <div class="info-item"><strong>Mother Tongue:</strong> Malayalam</div>
+                <div class="info-item"><strong>Parish:</strong> St. Francis Assisi Church, Kakkanad</div>
             </div>
+        </div>
 
-            <!-- Education & Profession -->
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden fade-in delay-100 border border-red-100 flex flex-col">
-                <div class="card-header-gradient px-6 py-4">
-                    <h3 class="text-xl font-serif font-bold text-white">Education & Career</h3>
-                </div>
-                <div class="p-6 flex-grow">
-                    <ul class="space-y-4">
-                        <li class="flex flex-col border-b border-gray-100 pb-3">
-                            <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">Highest Education</span>
-                            <span class="text-lg font-semibold text-gray-800">B.Tech (Computer Science)</span>
-                            <span class="text-sm text-gray-600">PG Diploma in Project Management (Canada)</span>
-                        </li>
-                        <li class="flex flex-col border-b border-gray-100 pb-3">
-                            <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">Current Profession</span>
-                            <span class="text-lg font-semibold text-gray-800">Sales & Marketing Executive</span>
-                            <span class="text-sm text-gray-600">Amazing Rubbers Pvt Limited</span>
-                        </li>
-                        <li class="flex flex-col">
-                            <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">Additional Training</span>
-                            <span class="text-lg font-semibold text-gray-800">Cloud & DevOps Trainee</span>
-                        </li>
-                    </ul>
-                </div>
+        <div class="section">
+            <h2>Education & Profession</h2>
+            <div class="info-grid">
+                <div class="info-item"><strong>Education:</strong> B.Tech in Computer Science Engineering (SCMS School Of Engineering & Technology), PG Diploma in Project Management (Algoma University, Canada)</div>
+                <div class="info-item"><strong>Profession:</strong> Sales & Marketing Executive (Amazing Rubbers Pvt Limited) & Part-Time Cloud/DevOps Trainee (AkumenbyQ)</div>
+                <div class="info-item"><strong>Hobbies:</strong> Bike/Car Enthusiast, Blogging, Cooking, Long Drives, Volunteer Work</div>
             </div>
+        </div>
 
-            <!-- Family Details -->
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden fade-in delay-200 border border-red-100 flex flex-col">
-                <div class="card-header-gradient px-6 py-4">
-                    <h3 class="text-xl font-serif font-bold text-white">Family Details</h3>
-                </div>
-                <div class="p-6 flex-grow">
-                    <ul class="space-y-4">
-                        <li class="flex flex-col">
-                            <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">Father</span>
-                            <span class="text-lg font-semibold text-gray-800">Mr. Shaju N.T</span>
-                            <span class="text-sm text-gray-600">Businessman (Proprietor, Global Jewellers)</span>
-                        </li>
-                        <li class="flex flex-col">
-                            <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">Mother</span>
-                            <span class="text-lg font-semibold text-gray-800">Mrs. Ligi Shaju</span>
-                            <span class="text-sm text-gray-600">Homemaker</span>
-                        </li>
-                        <li class="flex flex-col">
-                            <span class="text-sm text-gray-500 font-medium uppercase tracking-wider">Siblings</span>
-                            <span class="text-lg font-semibold text-gray-800">1 Younger Brother</span>
-                            <span class="text-sm text-gray-600">Studying in 10th Standard</span>
-                        </li>
-                    </ul>
-                </div>
+        <div class="section">
+            <h2>Family Information</h2>
+            <div class="info-grid">
+                <div class="info-item"><strong>Family Status:</strong> Upper Middle Class</div>
+                <div class="info-item"><strong>Father:</strong> Shaju N.T (Businessman - Global Jewellers)</div>
+                <div class="info-item"><strong>Mother:</strong> Ligi Shaju (Homemaker)</div>
+                <div class="info-item"><strong>Siblings:</strong> 1 Younger Brother (Edwin Shaju)</div>
             </div>
+            <p style="margin-top: 15px; font-size: 0.95rem; color: #555;">Jowin comes from a God-fearing, simple, and well-respected family. This profile is managed by family members.</p>
+        </div>
 
-            <!-- Partner Expectations -->
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden fade-in delay-200 border border-brand-gold border-opacity-50 flex flex-col ring-4 ring-brand-gold ring-opacity-10">
-                <div class="bg-gradient-to-r from-brand-gold to-yellow-600 px-6 py-4">
-                    <h3 class="text-xl font-serif font-bold text-white">Partner Expectations</h3>
+        <div class="section">
+            <h2>Photo Gallery</h2>
+            <p style="text-align: center; color: #666; font-size: 0.9rem;">High-resolution profile and landscape photos.</p>
+            <div class="gallery">
+                <!-- Landscape format -->
+                <div class="gallery-item">
+                    <img src="DSC_4058.jpg" alt="Family Landscape Photo" title="4928 x 3264 Landscape">
                 </div>
-                <div class="p-6 flex-grow bg-orange-50">
-                    <p class="text-gray-800 mb-4 leading-relaxed font-medium">
-                        Looking for a God-fearing, humble, loving, and caring life partner who values faith, family, and relationships. Open and willing to relocate abroad together to build a family and pursue our careers.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 mt-4">
-                        <div>
-                            <span class="text-xs text-brand-red font-bold uppercase tracking-wider block mb-1">Age Pref</span>
-                            <span class="text-md font-semibold text-gray-900 bg-white px-3 py-1 rounded-full border border-orange-200 shadow-sm inline-block">23 - 28 Yrs</span>
-                        </div>
-                        <div>
-                            <span class="text-xs text-brand-red font-bold uppercase tracking-wider block mb-1">Height Pref</span>
-                            <span class="text-md font-semibold text-gray-900 bg-white px-3 py-1 rounded-full border border-orange-200 shadow-sm inline-block">150 - 165 cm</span>
-                        </div>
-                        <div class="col-span-2">
-                            <span class="text-xs text-brand-red font-bold uppercase tracking-wider block mb-1">Denomination Pref</span>
-                            <span class="text-sm font-medium text-gray-800 leading-snug block bg-white p-2 rounded-lg border border-orange-200 shadow-sm">
-                                Syrian / Latin / Malankara / Jacobite / Marthomite / Orthodox
-                            </span>
-                        </div>
-                    </div>
+                <!-- Portrait formats -->
+                <div class="gallery-item">
+                    <img src="20260922_011627.jpg" alt="Airport Group Photo" title="2252 x 4000 Portrait">
+                </div>
+                <div class="gallery-item">
+                    <img src="20260808_151920(0).jpg" alt="Event Portrait Photo">
+                </div>
+                <div class="gallery-item">
+                    <img src="20260815_133648.jpg" alt="Vehicle Portrait Photo 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="20260830_165935.jpg" alt="Vehicle Portrait Photo 2">
                 </div>
             </div>
         </div>
 
-        <section class="mt-16 fade-in delay-300">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-serif font-bold text-brand-dark inline-block relative">
-                    Photo Gallery
-                    <span class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-brand-gold rounded-full"></span>
-                </h2>
-            </div>
+    </div>
 
-            <!-- Gallery Grid -->
-            <!-- Note on Image Sizing: Dimensions are provided directly as width/height attributes 
-                 to preserve intrinsic aspect ratio data for the browser, while CSS (w-full h-auto) 
-                 ensures they remain fluid and responsive within the CSS grid. -->
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                
-                <!-- Landscape Image 2 (Wide Group Photo) - Spans full width on desktop if desired, but kept in grid here -->
-                <div class="md:col-span-2 gallery-img-container">
-                    <img src="DSC_4058.jpg" alt="Family Group Photo" width="4928" height="3264" class="gallery-img" loading="lazy" onerror="this.src='https://placehold.co/4928x3264/f3f4f6/991B1B?text=Family+Photo'">
-                </div>
-
-                <!-- Landscape Image 1 / Tall Image -->
-                <div class="gallery-img-container">
-                    <img src="20260922_011627.jpg" alt="Airport Group Photo" width="2252" height="4000" class="gallery-img" loading="lazy" onerror="this.src='https://placehold.co/2252x4000/f3f4f6/991B1B?text=Group+Photo'">
-                </div>
-
-                <!-- Portraits Grid -->
-                <div class="grid grid-cols-1 gap-6">
-                    <!-- Portrait 1 -->
-                    <div class="gallery-img-container">
-                        <img src="20260808_151920(0).jpg" alt="Jowin Portrait 1" class="gallery-img" loading="lazy" onerror="this.src='https://placehold.co/800x1200/f3f4f6/991B1B?text=Portrait+1'">
-                    </div>
-                    
-                    <!-- Portrait 2 -->
-                    <div class="gallery-img-container">
-                        <img src="20260815_133648.jpg" alt="Jowin with Car Traditional" class="gallery-img" loading="lazy" onerror="this.src='https://placehold.co/800x1200/f3f4f6/991B1B?text=Portrait+2'">
-                    </div>
-
-                    <!-- Portrait 3 -->
-                    <div class="gallery-img-container">
-                        <img src="20260830_165935.jpg" alt="Jowin with Car Casual" class="gallery-img" loading="lazy" onerror="this.src='https://placehold.co/800x1200/f3f4f6/991B1B?text=Portrait+3'">
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-brand-dark text-white py-8 mt-auto">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h4 class="font-serif text-2xl font-bold mb-2">Jowin Shaju</h4>
-            <p class="text-red-200 text-sm mb-4">Matrimony Profile Portfolio</p>
-            <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-4"></div>
-            <p class="text-xs text-red-300">
-                Created for matrimony reference purposes.
-            </p>
-        </div>
+    <footer>
+        <p>&copy; 2026 Jowin Shaju Matrimony Portfolio. All rights reserved.</p>
     </footer>
 
 </body>
