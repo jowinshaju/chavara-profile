@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jowin Shaju - Matrimony Portfolio</title>
+    <title>Matrimony Portfolio - Jowin Shaju</title>
     <style>
         :root {
-            --primary-color: #d32f2f;
-            --secondary-color: #ffb300;
-            --bg-color: #fdfbf7;
-            --text-color: #333;
+            --primary-color: #900C3F; /* Chavara Matrimony inspired maroon */
+            --secondary-color: #FFC300; /* Warm gold accent */
+            --bg-color: #fdf8f5; /* Soft peach/cream background */
+            --text-main: #333;
             --card-bg: #ffffff;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
         header {
-            background: linear-gradient(135deg, var(--primary-color), #9a0007);
+            background: linear-gradient(135deg, var(--primary-color), #c70039);
             color: white;
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             border-bottom: 5px solid var(--secondary-color);
         }
         header h1 {
@@ -33,164 +33,160 @@
             letter-spacing: 1px;
         }
         header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            color: #ffebee;
+            margin: 5px 0 0;
+            font-size: 1.1rem;
         }
         .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .section-title {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
         }
         .card {
             background-color: var(--card-bg);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            padding: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-top: 4px solid var(--primary-color);
         }
-        .info-grid {
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px dashed var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .detail-item strong {
+            color: var(--primary-color);
+        }
+        /* Photo Gallery Styles */
+        .gallery-section {
+            margin-top: 20px;
+        }
+        .landscape-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .portrait-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 20px;
         }
-        .info-item strong {
-            color: var(--primary-color);
-            display: block;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .gallery figure {
-            margin: 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            background: #fff;
-            padding: 10px;
-        }
-        .gallery img {
+        /* Preserving aspect ratios based on request */
+        img.landscape {
             width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--secondary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        img.portrait {
+            width: 100%;
+            height: auto;
             aspect-ratio: 3 / 4;
             object-fit: cover;
-            border-radius: 5px;
+            border-radius: 8px;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .gallery figcaption {
+        .photo-caption {
             text-align: center;
-            padding: 10px 0 5px;
             font-size: 0.9rem;
-            color: #555;
-            font-style: italic;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
+            color: #666;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>JOWIN SHAJU</h1>
-        <p>Seeking a God-fearing, humble, loving, and caring life partner</p>
-    </header>
+<header>
+    <h1>Jowin Shaju[cite: 6]</h1>
+    <p>Chavara ID: CM1016646[cite: 6]</p>
+</header>
 
-    <div class="container">
-        
-        <div class="card">
-            <h2 class="section-title">About Me</h2>
-            <p>Hello, I am a God-fearing, simple, and family-oriented person from Kochi. I am marriage-oriented, looking to settle down, and open to relocating abroad. I had undergone hair fixing, which I am comfortable sharing openly.</p>
-        </div>
-
-        <div class="card">
-            <h2 class="section-title">Primary Information</h2>
-            <div class="info-grid">
-                <div class="info-item"><strong>Age, DOB & Height</strong> 30 | 10/02/1996 | 165 Cm</div>
-                <div class="info-item"><strong>Religion</strong> Christian, Syrian Catholic</div>
-                <div class="info-item"><strong>Parish</strong> St. Francis Assisi Church, Kakkanad (Ernakulam-Angamaly Archdiocese)</div>
-                <div class="info-item"><strong>Mother Tongue</strong> Malayalam</div>
-                <div class="info-item"><strong>Location</strong> Kakkanad, Ernakulam, Kerala</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2 class="section-title">Education & Career</h2>
-            <div class="info-grid">
-                <div class="info-item"><strong>Education</strong> B.Tech in Computer Science Engineering (SCMS), PG Diploma in Project Management from Canada</div>
-                <div class="info-item"><strong>Profession</strong> Sales & Marketing Executive at Amazing Rubbers Pvt Limited, CSEZ Kakkanad</div>
-                <div class="info-item"><strong>Additional Roles</strong> Part-Time Cloud & DevOps Trainee at AkumenbyQ (Remote) working towards re-entering the IT field</div>
-                <div class="info-item"><strong>Income</strong> 4 To 5 Lakh annually</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2 class="section-title">Family Details</h2>
-            <p>I come from an Upper Middle Class, well-respected family.</p>
-            <ul>
-                <li><strong>Father:</strong> Shaju N.T (Proprietor of Global Jewellers, Ernakulam)</li>
-                <li><strong>Mother:</strong> Ligi Shaju (Homemaker)</li>
-                <li><strong>Sibling:</strong> One younger brother, Edwin Shaju (10th standard at Naipunnya Public School)</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2 class="section-title">Hobbies & Interests</h2>
-            <div class="info-grid">
-                <div class="info-item"><strong>Interests</strong> Bike / Car Enthusiast, Blogging, Going On Long Drives, Volunteer Work</div>
-                <div class="info-item"><strong>Sports/Games</strong> Cricket, Badminton, Cycling, Gym / Bodybuilding</div>
-                <div class="info-item"><strong>Food</strong> Non-Vegetarian (Arabic, Chinese, Continental, South Indian)</div>
-                <div class="info-item"><strong>Movies & Music</strong> Comedy, Romantic, Action | Melodies, Rock, Christian / Gospel</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2 class="section-title">Partner Preferences</h2>
-            <ul>
-                <li><strong>Age & Height:</strong> 23 Yrs - 28 Yrs | 150 Cm - 165 Cm</li>
-                <li><strong>Denomination:</strong> Syrian Catholic, Latin Catholic, Malankara Catholic, Jacobite, Marthomite, Orthodox</li>
-                <li><strong>Expectations:</strong> Looking for someone respectful, emotionally available, educated, and employed. Candidates willing to relocate abroad together to build a family and pursue their career are warmly welcomed.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2 class="section-title">Photo Gallery</h2>
-            <div class="gallery">
-                <figure>
-                    <img src="20260609_084820.jpg" alt="Profile Picture">
-                    <figcaption>Profile Picture</figcaption>
-                </figure>
-                <figure>
-                    <img src="20260830_165935.jpg" alt="Casual Attire">
-                    <figcaption>Casual Attire</figcaption>
-                </figure>
-                <figure>
-                    <img src="20260815_133648.jpg" alt="Traditional Kerala Attire">
-                    <figcaption>Traditional Kerala Attire</figcaption>
-                </figure>
-                <figure>
-                    <img src="DSC_4058.jpg" alt="Family Portrait">
-                    <figcaption>Family Portrait</figcaption>
-                </figure>
-                <figure>
-                    <img src="20260922_011627.jpg" alt="Family Airport Trip">
-                    <figcaption>Family Trip</figcaption>
-                </figure>
-            </div>
-        </div>
-        
+<div class="container">
+    <div class="card">
+        <h2>About Me</h2>
+        <p>Hello, I am a God-fearing, simple, and family-oriented person from Kochi[cite: 6]. I hold a B. Tech in Computer Science and a PG Diploma in Project Management from Canada[cite: 6]. I have experience in DevOps and currently work full-time as a Marketing Executive, while also pursuing a short-term part-time role as a Cloud & DevOps Trainee at AkumenbyQ, Kakkanad[cite: 6]. I am marriage-oriented, looking to settle down, and open to relocating abroad[cite: 6]. I had undergone hair fixing, which I am comfortable sharing openly[cite: 6].</p>
     </div>
+
+    <div class="card grid-2">
+        <div>
+            <h2>Primary Information</h2>
+            <div class="detail-item"><strong>Age:</strong> 30 Yrs 7 Months[cite: 6]</div>
+            <div class="detail-item"><strong>Height:</strong> 165 Cm[cite: 6]</div>
+            <div class="detail-item"><strong>Blood Group:</strong> AB+Ve[cite: 6]</div>
+            <div class="detail-item"><strong>Mother Tongue:</strong> Malayalam[cite: 6]</div>
+            <div class="detail-item"><strong>Marital Status:</strong> Unmarried[cite: 6]</div>
+        </div>
+        <div>
+            <h2>Religious Information</h2>
+            <div class="detail-item"><strong>Religion:</strong> Christian[cite: 6]</div>
+            <div class="detail-item"><strong>Denomination:</strong> Syrian Catholic[cite: 6]</div>
+            <div class="detail-item"><strong>Diocese:</strong> Ernakulam-Angamaly Archdiocese[cite: 6]</div>
+            <div class="detail-item"><strong>Parish:</strong> St. Francis Assisi Church, Kakkanad[cite: 6]</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Education & Profession</h2>
+        <p><strong>Education:</strong> B.Tech in Computer Science Engineering at SCMS School Of Engineering & Technology, Karukutty[cite: 6]. Post Graduate Certificate in Project Management at Algoma University (Canada)[cite: 6].</p>
+        <p><strong>Occupation:</strong> Sales & Marketing Executive (Business to Business) at Amazing Rubbers Pvt Limited, CSEZ Kakkanad[cite: 6].</p>
+        <p><strong>Income:</strong> 4 To 5 Lakh[cite: 6]</p>
+    </div>
+
+    <div class="card">
+        <h2>Family Background</h2>
+        <p>Jowin comes from a God-fearing, simple, and well-respected family consisting of his father, mother, and younger brother[cite: 6]. His father, Mr. Shaju N. T., is a businessman and the proprietor of Global Jewellers in Ernakulam[cite: 6]. His mother, Mrs. Ligi Shaju, is a homemaker[cite: 6]. His younger brother, Edwin Shaju, is currently studying in the 10th standard[cite: 6].</p>
+    </div>
+
+    <div class="card">
+        <h2>Partner Expectations</h2>
+        <p>I am looking for a God-fearing, humble, loving, and caring life partner who values faith, family, and relationships[cite: 6]. I would appreciate someone who is respectful, emotionally available, educated, and employed[cite: 6]. I am planning to move abroad after marriage, and candidates who are open and willing to relocate abroad together are warmly welcomed[cite: 6].</p>
+    </div>
+
+    <div class="card gallery-section">
+        <h2>Photo Gallery</h2>
+        
+        <!-- Landscape Photos -->
+        <h3>Landscape Views</h3>
+        <div class="landscape-gallery">
+            <div>
+                <img src="DSC_4058.jpg" alt="Family Photo" class="landscape">
+                <div class="photo-caption">DSC_4058.jpg[cite: 1]</div>
+            </div>
+            <div>
+                <img src="20260922_011627.jpg" alt="Airport Family Photo" class="landscape">
+                <div class="photo-caption">20260922_011627.jpg[cite: 5]</div>
+            </div>
+        </div>
+
+        <!-- Portrait Photos -->
+        <h3>Portrait Views</h3>
+        <div class="portrait-gallery">
+            <div>
+                <img src="20260808_151920(0).jpg" alt="Portrait 1" class="portrait">
+                <div class="photo-caption">20260808_151920(0).jpg[cite: 2]</div>
+            </div>
+            <div>
+                <img src="20260815_133648.jpg" alt="Portrait with Car" class="portrait">
+                <div class="photo-caption">20260815_133648.jpg[cite: 3]</div>
+            </div>
+            <div>
+                <img src="20260830_165935.jpg" alt="Portrait with Sunglasses" class="portrait">
+                <div class="photo-caption">20260830_165935.jpg[cite: 4]</div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
